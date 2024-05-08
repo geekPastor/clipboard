@@ -17,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -90,10 +91,6 @@ fun MainHomeScreen(){
             }
         },
         floatingActionButton = {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
                 FloatingActionButton(
                     onClick = {
                         showAddDialog = true
@@ -102,8 +99,8 @@ fun MainHomeScreen(){
                 ) {
                     Icon(imageVector = Icons.Filled.Add, contentDescription = "")
                 }
-            }
-        }
+        },
+        floatingActionButtonPosition = FabPosition.Center
     ) {paddingValues ->
         LazyColumn(
             modifier = Modifier.padding(paddingValues),
