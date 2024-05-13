@@ -10,7 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.geekpastor.clipboard.ui.screens.homeScreen.MainHomeScreen
 import com.geekpastor.clipboard.ui.theme.ClipboardTheme
+import com.geekpastor.clipboard.util.MultiPreview
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +24,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    //Greeting("Android")
+                    MainHomeScreen()
                 }
             }
         }
@@ -30,17 +33,15 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun Greeting() {
+    MainHomeScreen()
 }
 
-@Preview(showBackground = true)
+
+@MultiPreview
 @Composable
 fun GreetingPreview() {
     ClipboardTheme {
-        Greeting("Android")
+        Greeting()
     }
 }
